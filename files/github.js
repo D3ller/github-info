@@ -26,5 +26,13 @@ module.exports = class monmodule {
     }
   }
 
+  async CreatedAt() {
+    try {
+      this.createdat = (await getJSON(`https://api.github.com/users/${this.name}`)).created_at;
+      return this.createdat;
+    } catch (err) {
+      return;
+    }
+  }
 
 };
