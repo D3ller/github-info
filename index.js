@@ -1,5 +1,10 @@
-const monmodule = require('./files/test');
-const GithubName = new monmodule("salut");
+const monmodule = require('./files/github');
+const GithubName = new monmodule("test");
 
-console.log(GithubName.id)
-console.log(GithubName.avatarURL)
+GithubName.id().then(g=>{
+  console.log("son nom est "+ g);
+});
+
+GithubName.avatarURL().then(g=>{
+    console.log("Son avatar est "+ g);
+})
