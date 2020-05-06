@@ -8,3 +8,7 @@ GithubName.id().then(g=>{
 GithubName.avatarURL().then(g=>{
     console.log("Son avatar est "+ g);
 })
+
+GithubName.CreatedAt().then(g=>{
+  console.log("Crée le "+ g);
+})
