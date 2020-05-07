@@ -1,14 +1,18 @@
-const monmodule = require('./files/github');
-const GithubName = new monmodule("test");
+const getJSON = require("simple-get-json");
+const userInfo = require("./src/User");
 
-GithubName.id().then(g=>{
-  console.log("son nom est "+ g);
-});
-
-GithubName.avatarURL().then(g=>{
-    console.log("Son avatar est "+ g);
-})
-
-GithubName.CreatedAt().then(g=>{
-  console.log("Crée le "+ g);
-})
+module.exports = {
+  fetchUser: name => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        resolve(
+          new userInfo(await getJSON(
+        `https://api.github.com/users/${name}`
+      ))
+        );
+      } catch (err) {
+        return reject(`Error : ${err}`);
+      }
+    });
+  }
+};
