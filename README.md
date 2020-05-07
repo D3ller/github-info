@@ -15,7 +15,7 @@ github.fetchUser('Shadowv7').then((user) => {
   UserInfo {
   name: 'Shadowv7',
   id: 60565794,
-  careatedAt: '2020-02-02T07:52:28Z',
+  createdAt: '2020-02-02T07:52:28Z',
   updatedAt: '2020-05-06T10:39:14Z',
   bio: 'A trash javascript developper',
   link: 'https://github.com/Shadowv7',
