@@ -5,22 +5,26 @@ Github-info is a module allowing to have information on a user and his repositor
 
 **Import the package**
 ```js
-const GI = require('github-info-dev');
-const GithubName = new GI("your-name");
+const github = require('github-info-dev');
 ```
 Now, we get can get information about user or repositories.
 ```js
-// Get the name
-console.log(GithubName.name) //output : "your-name"
-
-//Get the identifiant
-GithubName.id().then(id =>{
-  console.log(`ID: ${g}`); //output : "ID: 38815571"
-});
-
-//Get the avatar_url
-GithubName.avatarURL().then(URL =>{
-    console.log("AvatarURL "+ URL); //output : "AvatarURL : https://avatars1.githubusercontent.com/u/38815571?v=4"
+github.fetchUser('Shadowv7').then((user) => {
+  console.log(user)
+  /*
+  UserInfo {
+  name: 'Shadowv7',
+  id: 60565794,
+  careatedAt: '2020-02-02T07:52:28Z',
+  updatedAt: '2020-05-06T10:39:14Z',
+  bio: 'A trash javascript developper',
+  link: 'https://github.com/Shadowv7',
+  repoLength: 27,
+  avatarURL: 'https://avatars0.githubusercontent.com/u/60565794?v=4',
+  followers: 2,
+  following: 1
+}
+  */
 })
 ```
 
